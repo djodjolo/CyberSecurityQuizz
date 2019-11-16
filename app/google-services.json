@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "243688305066",
+    "firebase_url": "https://kvizsajberbezbednosti.firebaseio.com",
+    "project_id": "kvizsajberbezbednosti",
+    "storage_bucket": "kvizsajberbezbednosti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243688305066:android:313589da90708e77293bd3",
+        "android_client_info": {
+          "package_name": "com.example.kviz1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243688305066-m5lra7dsedrtblfr5qpfb9cm7cmos8bn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kviz1",
+            "certificate_hash": "affd8c014b8345ddbc5ca7672e123b08214e2f42"
+          }
+        },
+        {
+          "client_id": "243688305066-00vqroca2lj1dsho7iba0p562sqbm7e7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFNW8SpgrGOhnPTwXTG3psBnKCBbv7NVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243688305066-00vqroca2lj1dsho7iba0p562sqbm7e7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
