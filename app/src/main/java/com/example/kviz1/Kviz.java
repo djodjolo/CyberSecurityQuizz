@@ -28,7 +28,7 @@ public class Kviz extends AppCompatActivity {
 
     //initialize Firebase reference
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
+    DatabaseReference myRef = database.getReference("pitanja");
 
 
 
@@ -42,21 +42,7 @@ public class Kviz extends AppCompatActivity {
         setContentView(R.layout.activity_kviz);
 
 
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                Log.e("Mapped", map.toString());
 
-
-
-
-            }
-            @Override
-            public void onCancelled(DatabaseError error) {
-                Log.e("cancled",error.toString());
-            }
-        });
 
         q = (TextView) findViewById(R.id.q);
         a1 = (Button) findViewById(R.id.a1);
@@ -76,6 +62,30 @@ public class Kviz extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Kviz.this, kraj.class));
+            }
+        });
+
+        a2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+//                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+//                Log.e("Mapped", map.toString());
+
+
+                for (DataSnapshot chidSnap : dataSnapshot.getChildren()) {
+                    Log.e("tmz",""+ chidSnap.getKey()); //displays the key for the node
+                    Log.e("tmz",""+ chidSnap.child("pitanje").getValue());   //gives the value for given keyname
+                        }
+//                Log.e("ntwz",dataSnapshot.getChildren().toString());
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        Log.e("error",error.toString());
+                    }
+                });
             }
         });
 
