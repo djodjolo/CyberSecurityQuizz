@@ -3,12 +3,9 @@ package com.example.kviz1;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.models.Podaci;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +14,6 @@ import android.widget.TextView;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import com.example.models.Pitanje;
@@ -30,9 +26,11 @@ public class Kviz extends AppCompatActivity {
     TextView q;
 
     List<Pitanje> pitanja;
-    Podaci podaci;
-
+    int poeni = 0;
+    int indexpitanje = 0;
     int brojPitanja = 2;
+
+
     //initialize Firebase reference
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("pitanja");
@@ -53,11 +51,15 @@ public class Kviz extends AppCompatActivity {
         Intent intent = getIntent();
         Type listType = new TypeToken<ArrayList<Pitanje>>(){}.getType();
         List<Pitanje> pitanja = new Gson().fromJson(intent.getStringExtra("pitanja_json"), listType);
-//
+
+        if(pitanja.isEmpty()){
+            startActivity(new Intent(Kviz.this, MainActivity.class));
+        }
+
         Log.e("nemixano",pitanja.toString());
         Collections.shuffle(pitanja);
         Log.e("mixano-raw",pitanja.toString());
-        List<Pitanje> mixanaPitanja = new ArrayList<>();
+        final List<Pitanje> mixanaPitanja = new ArrayList<>();
             int index = 0;
             for(Pitanje p : pitanja){
                 if(index++<brojPitanja){
@@ -67,24 +69,66 @@ public class Kviz extends AppCompatActivity {
                 }
             }
 
-            Log.e("spremno",mixanaPitanja.toString());
+         Log.e("spremno",mixanaPitanja.toString());
 
+        q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
+        a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
+        a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
+        a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
 
+        Log.e("odddd",mixanaPitanja.get(indexpitanje).getOdgovori().toString());
 
+        a1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                   if(++indexpitanje==brojPitanja){
+                       startActivity(new Intent(Kviz.this, kraj.class));
+                   }else{
+                       q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
+                       a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
+                       a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
+                       a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
+                   }
+                }
+            });
         a2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if(++indexpitanje==brojPitanja){
+                    startActivity(new Intent(Kviz.this, kraj.class));
+                }else{
+                    q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
+                    a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
+                    a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
+                    a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
+                }
             }
         });
-
-
         a3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Kviz.this, kraj.class));
+                if(++indexpitanje==brojPitanja){
+                    startActivity(new Intent(Kviz.this, kraj.class));
+                }else{
+                    q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
+                    a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
+                    a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
+                    a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
+                }
             }
         });
+
+
+
+
+
+//        a3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(Kviz.this, kraj.class));
+//            }
+//        });
 
 //        a2.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pitanje implements Serializable {
@@ -12,11 +13,11 @@ public class Pitanje implements Serializable {
     String broj, odgovor, pitanje;
     List<String> odgovori;
 
-    public Pitanje(String broj, String odgovor, String pitanje, List<String> odgovori)  {
+    public Pitanje(String broj, String odgovor, String pitanje, List<String> aodgovori)  {
         this.broj = broj;
         this.odgovor = odgovor;
         this.pitanje = pitanje;
-        this.odgovori = odgovori;
+        this.odgovori = new ArrayList<>(aodgovori);
     }
 
 
@@ -52,4 +53,13 @@ public class Pitanje implements Serializable {
         this.odgovori = odgovori;
     }
 
+    @Override
+    public String toString() {
+        return "Pitanje{" +
+                "broj='" + broj + '\'' +
+                ", odgovor='" + odgovor + '\'' +
+                ", pitanje='" + pitanje + '\'' +
+                ", odgovori=" + odgovori +
+                '}';
+    }
 }

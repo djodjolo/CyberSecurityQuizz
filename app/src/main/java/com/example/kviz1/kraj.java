@@ -7,11 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.models.Pitanje;
-import com.example.models.Podaci;
-
-import java.util.List;
-
 public class kraj extends AppCompatActivity {
 
     Button izadji;
