@@ -1,0 +1,23 @@
+{
+  "pitanja" : [ {
+    "broj" : 1,
+    "odgovor" : 1,
+    "odgovori" : [ "Enkriptovanje podataka i ucenjivanje radi povracaja novca", "haos koji nastaje pri nestanku struje", "Napad fizickim putem" ],
+    "pitanje" : "Sta je ransomware?"
+  }, {
+    "broj" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Kradja identiteta", "Haos koji nastaje preplavljivanjem zahteva", "Napad na lozinku" ],
+    "pitanje" : "Sta je ddos?"
+  }, {
+    "broj" : 3,
+    "odgovor" : 2,
+    "odgovori" : [ "Enkriptovanje podataka i ucenjivanje radi povracaja novca", "Haos koji nastaje pri nestanku struje", "Napad fizickim putem" ],
+    "pitanje" : "Sta je blackout?"
+  }, {
+    "broj" : 4,
+    "odgovor" : 3,
+    "odgovori" : [ "Napad nastao losim software-om", "Napad nastao losim hardwerom", "Napad putem socijlango inzinjeringa" ],
+    "pitanje" : "Sta je phishing?"
+  } ]
+}
