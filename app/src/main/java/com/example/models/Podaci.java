@@ -1,15 +1,34 @@
 package com.example.models;
 
-//import com.example.models.Pitanje;
+import com.example.models.Pitanje;
 
-class Podaci {
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
-    String Module;
+public class Podaci {
+
     int brojPitanja;
-//    Pitanje[] pitanja = new Pitanje[brojPitanja];
+    List<Pitanje> pitanja;
+
+    public Podaci(int aBrojPitanja, List<Pitanje> listaPitanja){
+        this.brojPitanja = aBrojPitanja;
+        this.pitanja = listaPitanja;
+//        Collections.shuffle(pitanja);
+    }
 
 
-    public Podaci(){
+    public List<Pitanje> getPitanja() {
+        List<Pitanje> localpitanja = new ArrayList<>();
+        for(int i=0;i<brojPitanja;i++)
+            localpitanja.add(this.pitanja.get(i));
+        return localpitanja;
+    }
 
+    @Override
+    public String toString() {
+        return getPitanja().toString();
     }
 }

@@ -1,14 +1,18 @@
 package com.example.models;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.List;
 
-public class  Pitanje {
+public class Pitanje implements Serializable {
+
+
     String broj, odgovor, pitanje;
     List<String> odgovori;
 
-    public Pitanje(String broj, String odgovor, String pitanje, List<String> odgovori) {
+    public Pitanje(String broj, String odgovor, String pitanje, List<String> odgovori)  {
         this.broj = broj;
         this.odgovor = odgovor;
         this.pitanje = pitanje;
@@ -47,4 +51,5 @@ public class  Pitanje {
     public void setOdgovori(List<String> odgovori) {
         this.odgovori = odgovori;
     }
+
 }
