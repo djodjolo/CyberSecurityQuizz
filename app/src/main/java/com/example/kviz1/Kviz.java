@@ -7,6 +7,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,11 +21,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import com.example.models.Pitanje;
 
 public class Kviz extends AppCompatActivity {
 
     Button a1, a2, a3;
     TextView q;
+
+    List<Pitanje> pitanja;
 
     //initialize Firebase reference
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -50,13 +54,6 @@ public class Kviz extends AppCompatActivity {
         a3 = (Button) findViewById(R.id.a3);
 
 
-        a1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                q.setText("workss");
-
-            }
-        });
 
         a3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,11 +71,33 @@ public class Kviz extends AppCompatActivity {
 //                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
 //                Log.e("Mapped", map.toString());
 
-
+                pitanja = new ArrayList<Pitanje>();
                 for (DataSnapshot chidSnap : dataSnapshot.getChildren()) {
-                    Log.e("tmz",""+ chidSnap.getKey()); //displays the key for the node
-                    Log.e("tmz",""+ chidSnap.child("pitanje").getValue());   //gives the value for given keyname
-                        }
+//                    Log.e("tmz",""+ chidSnap.getKey()); //displays the key for the node
+//                    Log.e("tmz",""+ chidSnap.child("pitanje").getValue());   //gives the value for given keyname
+//                    pitanja.add(new Pitanje(chidSnap.child("pitanje").getValue().toString()));
+
+                    List<String> localPitanja = new ArrayList<>();
+
+                    for(DataSnapshot odgovor : chidSnap.child("odgovori").getChildren()){
+                        Log.e("iz nove liste",odgovor.getValue().toString());
+                        localPitanja.add(odgovor.getValue().toString());
+                    }
+                        Log.e("----","-----");
+//
+                    pitanja.add(new Pitanje(
+                              chidSnap.child("broj").getValue().toString(),
+                              chidSnap.child("odgovor").getValue().toString(),
+                              chidSnap.child("pitanje").getValue().toString(),
+                              localPitanja
+                      ));
+                    localPitanja.clear();
+
+                }
+
+                for(Pitanje pitanje : pitanja){
+                    q.append(pitanje.getOdgovor());
+                }
 //                Log.e("ntwz",dataSnapshot.getChildren().toString());
                     }
                     @Override
