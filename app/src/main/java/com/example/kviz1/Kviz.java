@@ -76,46 +76,67 @@ public class Kviz extends AppCompatActivity {
         a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
         a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
 
-        Log.e("odddd",mixanaPitanja.get(indexpitanje).getOdgovori().toString());
+//        Log.e("odddd",mixanaPitanja.get(indexpitanje).getOdgovori().toString());
+          Log.e("get odgovor",mixanaPitanja.get(indexpitanje).getOdgovor());
+          Log.e("poeni", this.poeni+"");
+
 
         a1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
+                    if(Integer.parseInt(mixanaPitanja.get(indexpitanje).getOdgovor()) == 1){
+                        poeni++;
+                    }
+
                    if(++indexpitanje==brojPitanja){
-                       startActivity(new Intent(Kviz.this, kraj.class));
+                       startActivity(new Intent(Kviz.this, kraj.class).putExtra("poeni",poeni));
                    }else{
                        q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
                        a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
                        a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
                        a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
                    }
+                    Log.e("poeni", poeni+"");
+
                 }
             });
         a2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Integer.parseInt(mixanaPitanja.get(indexpitanje).getOdgovor()) == 2){
+                    poeni++;
+                }
+
                 if(++indexpitanje==brojPitanja){
-                    startActivity(new Intent(Kviz.this, kraj.class));
+                    startActivity(new Intent(Kviz.this, kraj.class).putExtra("poeni",poeni));
+
                 }else{
                     q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
                     a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
                     a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
                     a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
                 }
+                Log.e("poeni", poeni+"");
+
             }
         });
         a3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                    if(Integer.parseInt(mixanaPitanja.get(indexpitanje).getOdgovor()) == 3){
+                        poeni++;
+                }
                 if(++indexpitanje==brojPitanja){
-                    startActivity(new Intent(Kviz.this, kraj.class));
+                    startActivity(new Intent(Kviz.this, kraj.class).putExtra("poeni",poeni));
                 }else{
                     q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
                     a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
                     a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
                     a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
                 }
+                Log.e("poeni", poeni+"");
+
             }
         });
 
@@ -174,6 +195,10 @@ public class Kviz extends AppCompatActivity {
 //                });
 //            }
 //        });
+
+    }
+
+    private void proveriOdgovor(){
 
     }
 

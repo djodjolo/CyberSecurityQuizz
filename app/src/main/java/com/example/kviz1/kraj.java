@@ -2,6 +2,7 @@ package com.example.kviz1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,12 +21,10 @@ public class kraj extends AppCompatActivity {
         izadji = (Button)findViewById(R.id.izadji);
         rezultat = (TextView)findViewById(R.id.rezultat);
 
-//        Podaci p = new Podaci(2);
-//
-//        List<Pitanje>  pitanja = p.getPitanja();
-//
-//        for(Pitanje item: pitanja)
-//            rezultat.append(item.getOdgovor());
+        Intent mIntent = getIntent();
+        rezultat.setText("Vas rezultat je "+  mIntent.getIntExtra("poeni",0));
+
+
 
         izadji.setOnClickListener(new View.OnClickListener() {
             @Override
