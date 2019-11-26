@@ -1,12 +1,17 @@
 package com.example.kviz1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import com.example.models.Pitanje;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -17,10 +22,15 @@ import java.util.List;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
 import com.google.gson.Gson;
 
 
 import android.util.Log;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,14 +44,25 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //create instance
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Log.e("FCM tOKEN: ",  FirebaseInstanceId.getInstance().getToken());
+
+
+        MyFirebaseMessagingService mf = new MyFirebaseMessagingService();
+
         //init button
         uvod = (Button) findViewById(R.id.uvod);
+
+
+
+
 
         //init data
         pitanja = new ArrayList<Pitanje>();
@@ -91,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }
 
