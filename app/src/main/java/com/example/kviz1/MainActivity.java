@@ -8,10 +8,13 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import com.example.models.Pitanje;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -33,6 +36,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     Button uvod;
@@ -50,17 +55,15 @@ public class MainActivity extends AppCompatActivity {
         //create instance
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        Log.e("FCM tOKEN: ",  FirebaseInstanceId.getInstance().getToken());
-
-
         MyFirebaseMessagingService mf = new MyFirebaseMessagingService();
+
 
         //init button
         uvod = (Button) findViewById(R.id.uvod);
 
-
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                .permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
 
 
@@ -104,11 +107,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Gson gson = new Gson();
-                String pitanja_json = gson.toJson(pitanja);
 
-//                startActivity(new Intent(MainActivity.this, Kviz.class));
-                startActivity(new Intent(MainActivity.this, Kviz.class).putExtra("pitanja_json",pitanja_json));
+                FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( new OnSuccessListener<InstanceIdResult>() {
+                    @Override
+                    public void onSuccess(InstanceIdResult instanceIdResult) {
+                        String deviceToken = instanceIdResult.getToken();
+                        MyFirebaseMessagingService mf = new MyFirebaseMessagingService();
+                        mf.sendToken(deviceToken);
+                    }
+                });
+
+//                Gson gson = new Gson();
+//                String pitanja_json = gson.toJson(pitanja);
+//
+////                startActivity(new Intent(MainActivity.this, Kviz.class));
+//                startActivity(new Intent(MainActivity.this, Kviz.class).putExtra("pitanja_json",pitanja_json));
 
             }
         });
