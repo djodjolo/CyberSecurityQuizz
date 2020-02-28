@@ -1,4 +1,4 @@
-package com.example.models;
+package com.ais.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,13 +10,14 @@ import java.util.List;
 public class Pitanje implements Serializable {
 
 
-    String broj, odgovor, pitanje;
+    String broj, odgovor, pitanje, tezina;
     List<String> odgovori;
 
-    public Pitanje(String broj, String odgovor, String pitanje, List<String> aodgovori)  {
+    public Pitanje(String broj, String odgovor, String pitanje, List<String> aodgovori,String tezina)  {
         this.broj = broj;
         this.odgovor = odgovor;
         this.pitanje = pitanje;
+        this.tezina = tezina;
         this.odgovori = new ArrayList<>(aodgovori);
     }
 
@@ -41,6 +42,14 @@ public class Pitanje implements Serializable {
         return pitanje;
     }
 
+    public void setTezina(String tezina) {
+        this.tezina = tezina;
+    }
+
+    public String getTezina() {
+        return tezina;
+    }
+
     public void setPitanje(String pitanje) {
         this.pitanje = pitanje;
     }
@@ -59,6 +68,7 @@ public class Pitanje implements Serializable {
                 "broj='" + broj + '\'' +
                 ", odgovor='" + odgovor + '\'' +
                 ", pitanje='" + pitanje + '\'' +
+                ", tezina='" + tezina + '\'' +
                 ", odgovori=" + odgovori +
                 '}';
     }

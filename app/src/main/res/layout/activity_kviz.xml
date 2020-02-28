@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg1"
     android:orientation="horizontal"
-    tools:context=".MainActivity">
+    tools:context="com.ais.MainActivity">
 
     <Button
         android:id="@+id/a2"
@@ -55,15 +56,17 @@
 
     <TextView
         android:id="@+id/q"
-        android:layout_width="348dp"
-        android:layout_height="156dp"
+        android:layout_width="333dp"
+        android:layout_height="280dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="#CD0C0C0C"
         android:gravity="center"
         android:text="Pitanje"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

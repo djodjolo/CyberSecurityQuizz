@@ -1,0 +1,274 @@
+{
+  "pitanja" : [ {
+    "broj" : 1,
+    "tezina" : 1,
+    "odgovor" : 1,
+    "odgovori" : [ "Enkriptovanje podataka i ucenjivanje radi povracaja novca", "haos koji nastaje pri nestanku struje", "Napad fizickim putem" ],
+    "pitanje" : "Sta je ransomware?"
+  }, {
+    "broj" : 2,
+    "tezina" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Kradja identiteta", "Haos koji nastaje preplavljivanjem zahteva", "Napad na lozinku" ],
+    "pitanje" : "Sta je ddos?"
+  }, {
+    "broj" : 3,
+    "tezina" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Enkriptovanje podataka i ucenjivanje radi povracaja novca", "Haos koji nastaje pri nestanku struje", "Napad fizickim putem" ],
+    "pitanje" : "Sta je blackout?"
+  }, {
+    "broj" : 4,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "Napad nastao losim software-om", "Napad nastao losim hardwerom", "Napad putem socijlango inzinjeringa" ],
+    "pitanje" : "Sta je phishing?"
+  }, {
+    "broj" : 5,
+    "tezina" : 3,
+    "odgovor" : 2,
+    "odgovori" : [ "Clark-Wilson", "Bell-LaPadula", "Brewer-Nash" ],
+    "pitanje" : "Koji sigurnosni model se bavi samo poverljivošću?"
+  }, {
+    "broj" : 6,
+    "tezina" : 3,
+    "odgovor" : 1,
+    "odgovori" : [ "Clark-Wilson", "Bell-LaPadula", "Brewer-Nash" ],
+    "pitanje" : "Koji sigurnosni model koristi ‘trojku’ pristupa (access triple npr.  subject-program-object) za sprovođenje “well-formed” transakcije?"
+  }, {
+    "broj" : 7,
+    "tezina" : 3,
+    "odgovor" : 3,
+    "odgovori" : [ "Clark-Wilson", "Bell-LaPadula", "Brewer-Nash" ],
+    "pitanje" : "Koji sigurnosni model dozvoljava dinamičku promenu dozvola  pristupa?"
+  }, {
+    "broj" : 8,
+    "tezina" : 2,
+    "odgovor" : 3,
+    "odgovori" : [ "Surge", "Blackout", "Fault" ],
+    "pitanje" : "Који се термин користи за опис тренутног  нестанка струје?"
+  }, {
+    "broj" : 9,
+    "tezina" : 3,
+    "odgovor" : 3,
+    "odgovori" : [ "Poverljivost", "Integritet", "Raspolozivost"],
+    "pitanje" : "Biba model se fokusira na"
+  }, {
+    "broj" : 10,
+    "tezina" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Sertifikate, integritet, dostupnost (Certificates, Integrity, Availability)", "Poverljivost, integritet, dostupnost (Confidentiality, Integrity, Availability)", "Poverljivost, integritet, autentifikaciju (Confidentality, Integrity, Authentication)" ],
+    "pitanje" : "Sta je CIA trojstvo?"
+  }, {
+    "broj" : 11,
+    "tezina" : 3,
+    "odgovor" : 1,
+    "odgovori" : [ "AH za autentifikaciju i ESP za enkripciju", "Zato sto AH sluzi za automation monitoring i esp za dekripciju", "To je dodatna sigurnost" ],
+    "pitanje" : "Zašto IPsec zahteva AH protokol i ESP protokol"
+  }, {
+    "broj" : 12,
+    "tezina" : 3,
+    "odgovor" : 2,
+    "odgovori" : [ "Driver embedded i Reverse proxy mode", "Application embedded i Tunnel mode", "Hardware embedded i Tunnel mode" ],
+    "pitanje" : "Koja su dva moda rada za SSL?"
+  }, {
+    "broj" : 13,
+    "tezina" : 2,
+    "odgovor" : 1,
+    "odgovori" : [ "Surge", "Blackout", "Fault" ],
+    "pitanje" : "Који се термин користи за опис наглог скока напона?"
+  }, {
+    "broj" : 14,
+    "tezina" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Transport i reverse proxy mode", "Transport i tunnel mode", "Waiting i tunnel mode" ],
+    "pitanje" : "Koja su dva moda rada za IPsec"
+  },{
+    "broj" : 15,
+    "tezina" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Rainbow table", " Brute force", "Recnik" ],
+    "pitanje" : "Koji tip razbijanja lozinke ce uvek biti uspesan"
+  }, {
+    "broj" : 16,
+    "tezina" : 3,
+    "odgovor" : 3,
+    "odgovori" : [ "Najmanjih privilegija (Least privilege)", "Need to know (Mora da zna)", "Rotation of duties (Rotacije poslova)" ],
+    "pitanje" : "Politika koja tvrdi da korisnik mora imati poslovno iskustvo da pogleda sadrzaj pre pokusaja da ga izvrsi je primer primenjivanja cega?"
+  }, {
+    "broj" : 17,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "TCP port 20", "TCP port 21","TCP port 22" ],
+    "pitanje" : "Secure Shell (SSH) serveri slusaju na kom portu I kom protokolu?"
+  }, {
+    "broj" : 18,
+    "tezina" : 3,
+    "odgovor" : 2,
+    "odgovori" : [ "BCI ", "ISO / IEC-27031 ", "BS-7799 " ],
+    "pitanje" : "Koji nacrt smernica za kontinuitet poslovanja osigurava kontinuitet poslovanja informacionih i komunikacionih tehnologija (ICT), kao deo sistema upravljanja informacijskom sigurnošću organizacije (ISMS)? "
+  }, {
+    "broj" : 19,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "Trojan ", "Rootkit ", "Worm" ],
+    "pitanje" : "Koji tip malvare-a se može propagirati bez interakcije korisnika? "
+  }, {
+    "broj" : 20,
+    "tezina" : 1,
+    "odgovor" : 2,
+    "odgovori" : [ "Trojan ", "Makro", "Worm" ],
+    "pitanje" : "Koja je vrsta malvera zajednički povezana s  Office dokumentacijom o produktivnosti? "
+  },{
+    "broj" : 21,
+    "tezina" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Razbijanje lozinke (Password cracking)", "Otimanje sesije (Session hijacking)", "Trojanski konj" ],
+    "pitanje" : "Koja tehnika napada može uključivati naizgled pouzdanu tačku za rešavanje problema kao veb-sajt koji podržava malvare? "
+  }, {
+    "broj" : 22,
+    "tezina" : 3,
+    "odgovor" : 2,
+    "odgovori" : [ "RAID 1 ", "RAID 0 ", "NRAID 5 " ],
+    "pitanje" : "Koji nivo RAID ne pruža dodatnu pouzdanost? "
+  }, {
+    "broj" : 23,
+    "tezina" : 2,
+    "odgovor" : 2,
+    "odgovori" : [ "Python", "Java", "PHP" ],
+    "pitanje" : "Koji programski jezik se može koristiti za pisanje apleta(program) koji koriste sandbox da bi se obezbedita sigurnost?"
+  }, {
+    "broj" : 24,
+    "tezina" : 1,
+    "odgovor" : 1,
+    "odgovori" : [ "Jednosmerni hash", "Difuzija (Diffusion)", "Konfuzija (Confusion)" ],
+    "pitanje" : "Koji se od sledećih kriptografskih metoda primarno koristi za osiguranje integriteta?"
+  },{
+    "broj" : 25,
+    "tezina" : 2,
+    "odgovor" : 3,
+    "odgovori" : [ "CFB", "OFB", "ECB" ],
+    "pitanje" : "Koji je DES nacin  najslabiji?"
+  },{
+    "broj" : 26,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "AES", "RSA", "One Time Pad" ],
+    "pitanje" : "Koji tip šifrovanja se pokazao nesalomivim?"
+  },{
+    "broj" : 27,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "Cross-Site Scripting (XSS)", "Falsifikovanje zahteva za više lokacija (CSRF) (Cross-Site Request Forgery)", "PHP daljinsko uključivanje datoteka (RFI) (PHP Remote File Inclusion)" ],
+    "pitanje" : "Koja ranjivost omogućava trećoj strani da preusmeri statički sadržaj unutar bezbednosnog konteksta pouzdanog sajta?"
+  },{
+    "broj" :28,
+    "tezina" : 1,
+    "odgovor" : 2,
+    "odgovori" : [ "Standardi su preporuke a direktive su zahtevi.", "Standardi su zahtevi a direktive su preporuke.", "Standardi su preporuke a direktive su opcionalne" ],
+    "pitanje" : "Koja je razlika izmedju standarda I direktiva?"
+  },{
+    "broj" : 29,
+    "tezina" : 2,
+    "odgovor" : 3,
+    "odgovori" : [ "Translation (Prevodjenje)", "NAT", "Tunneling (Tunelovanje)" ],
+    "pitanje" : "Pristupajuci IPv6 mrezi preko IPv4 mreze se zove kako?"
+  },{
+    "broj" : 30,
+    "tezina" : 2,
+    "odgovor" : 3,
+    "odgovori" : [ "Stateful", "Packet filter", "Application-layer proxy" ],
+    "pitanje" : "Koji je najbezbedniji tip firewall – a?"
+  },{
+    "broj" : 31,
+    "tezina" : 3,
+    "odgovor" : 2,
+    "odgovori" : [ "Kljuc sesije klijent/server ", "Key distribution center", "Ticket granting ticket" ],
+    "pitanje" : "Unutar Kerberosa, koji deo je jedina tacka neuspeha?"
+  },{
+    "broj" : 32,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "Flooding", "Spamming", "Botnets" ],
+    "pitanje" : "Koji se termin koristi za opisivanje situacije gde napadac, putem komande I kontrole mreze, kontrolise stotine, hiljade ili cak I desetine hiljada kompjutera I naredjuje svim tim kompjuterima da pocine neku aktivnost u istom trenutku?"
+  },{
+    "broj" : 33,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "Privatna mreza virtuelne kompanije", "Umrezeni racunar koji je kompromitovan I pod kontrolom napadaca", "Privatna mreza koja koristi javnu mrezu (najcesce internet) da sigurno poveze korisnike koristeci enkripciju" ],
+    "pitanje" : "Virtualna privatna mreza (Virtual Private Network – VPN) je :"
+  },{
+    "broj" : 34,
+    "tezina" : 3,
+    "odgovor" : 1,
+    "odgovori" : [ "WPA2", "WEP", "WPA" ],
+    "pitanje" : "Koji bezicni sigurnosni protokol, takodje poznat I kao Robust Security Network (RSN), implementira potpuno 802.11i standard?"
+  },{
+    "broj" : 35,
+    "tezina" : 3,
+    "odgovor" : 3,
+    "odgovori" : [ "Zasticen samo header", "Zasticeni su payload I header", "Samo je payload zasticen" ],
+    "pitanje" : "U prenosnom (transport mode) rezimu rada IPsec vazi :"
+  },{
+    "broj" : 36,
+    "tezina" : 2,
+    "odgovor" : 3,
+    "odgovori" : [ "Neoklopljene parice (Unshielded Twisted Pair)", "Oklopljene parice (Shielded Twisted Pair)", "Opticka vlakna (Fiber optic)" ],
+    "pitanje" : "Koji tip mreznog kabla treba koristiti da se elimise mogucnost preslusavanja?"
+  },{
+    "broj" : 37,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "Enkriptovati i zapisati je", "Zapisati je", "Upamtiti je po segmetima" ],
+    "pitanje" : "Kako je najbolje zapamtiti lozinku?"
+  },{
+    "broj" : 38,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "Računarska memorija", "Komunikacioni kanal", "Čovek" ],
+    "pitanje" : "Koja je najslabija karika u odavanju poverljive informacije?"
+  },{
+    "broj" : 39,
+    "tezina" : 2,
+    "odgovor" : 1,
+    "odgovori" : [ "Greška u kodu koja se može zloupotrebiti", "Greška u računaru", "Ljudski nepažnja" ],
+    "pitanje" : "Šta je buffer overflow?"
+  },{
+    "broj" : 40,
+    "tezina" : 2,
+    "odgovor" : 3,
+    "odgovori" : [ "PHP", "JAVA", "Asemblerski" ],
+    "pitanje" : "Koji programski jezik služi za analizu malware-a?"
+  },{
+    "broj" : 41,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "CFB", "OFB", "ECB" ],
+    "pitanje" : "Koji je DES nacin  najslabiji?"
+  },{
+    "broj" : 42,
+    "tezina" : 1,
+    "odgovor" : 3,
+    "odgovori" : [ "CFB", "OFB", "ECB" ],
+    "pitanje" : "Koji je DES nacin  najslabiji?"
+  },{
+    "broj" : 43,
+    "tezina" : 3,
+    "odgovor" : 3,
+    "odgovori" : [ "CFB", "OFB", "ECB" ],
+    "pitanje" : "Koji je DES nacin  najslabiji?"
+  },{
+    "broj" : 44,
+    "tezina" : 3,
+    "odgovor" : 3,
+    "odgovori" : [ "CFB", "OFB", "ECB" ],
+    "pitanje" : "Koji je DES nacin  najslabiji?"
+  }, {
+    "broj" : 45,
+    "tezina" : 3,
+    "odgovor" : 1,
+    "odgovori" : [ "Smurf", "Teardrop ", "Land" ],
+    "pitanje" : "Koji će tip napada koristiti pogrešno konfigurirane sisteme treće strane kako bi izvršio uskraćivanje usluge? "
+  }
+  ]
+}

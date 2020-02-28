@@ -1,8 +1,10 @@
-package com.example.kviz1;
+package com.ais;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.ais.models.Pitanje;
+import com.example.kviz1.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -16,7 +18,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import com.example.models.Pitanje;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -28,26 +30,21 @@ public class Kviz extends AppCompatActivity {
     List<Pitanje> pitanja;
     int poeni = 0;
     int indexpitanje = 0;
-    int brojPitanja = 2;
+    int brojPitanja = 5;
 
-
-    //initialize Firebase reference
+    //init firebase referencu
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("pitanja");
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kviz);
 
-
         q = (TextView) findViewById(R.id.q);
         a1 = (Button) findViewById(R.id.a1);
         a2 = (Button) findViewById(R.id.a2);
         a3 = (Button) findViewById(R.id.a3);
-
 
         Gson gson = new Gson();
         Intent intent = getIntent();
@@ -58,9 +55,9 @@ public class Kviz extends AppCompatActivity {
             startActivity(new Intent(Kviz.this, MainActivity.class));
         }
 
-        Log.e("nemixano",pitanja.toString());
+        //Log.e("nemixano",pitanja.toString());
         Collections.shuffle(pitanja);
-        Log.e("mixano-raw",pitanja.toString());
+        //Log.e("mixano-raw",pitanja.toString());
         final List<Pitanje> mixanaPitanja = new ArrayList<>();
             int index = 0;
             for(Pitanje p : pitanja){
@@ -71,17 +68,10 @@ public class Kviz extends AppCompatActivity {
                 }
             }
 
-         Log.e("spremno",mixanaPitanja.toString());
-
         q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
         a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
         a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
         a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
-
-//        Log.e("odddd",mixanaPitanja.get(indexpitanje).getOdgovori().toString());
-          Log.e("get odgovor",mixanaPitanja.get(indexpitanje).getOdgovor());
-          Log.e("poeni", this.poeni+"");
-
 
         a1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -92,15 +82,13 @@ public class Kviz extends AppCompatActivity {
                     }
 
                    if(++indexpitanje==brojPitanja){
-                       startActivity(new Intent(Kviz.this, kraj.class).putExtra("poeni",poeni));
+                       startActivity(new Intent(Kviz.this,  MainActivity.class).putExtra("poeni",poeni));
                    }else{
                        q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
                        a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
                        a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
                        a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
                    }
-                    Log.e("poeni", poeni+"");
-
                 }
             });
         a2.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +99,7 @@ public class Kviz extends AppCompatActivity {
                 }
 
                 if(++indexpitanje==brojPitanja){
-                    startActivity(new Intent(Kviz.this, kraj.class).putExtra("poeni",poeni));
+                    startActivity(new Intent(Kviz.this,  MainActivity.class).putExtra("poeni",poeni));
 
                 }else{
                     q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
@@ -119,7 +107,6 @@ public class Kviz extends AppCompatActivity {
                     a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
                     a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
                 }
-                Log.e("poeni", poeni+"");
 
             }
         });
@@ -130,78 +117,14 @@ public class Kviz extends AppCompatActivity {
                         poeni++;
                 }
                 if(++indexpitanje==brojPitanja){
-                    startActivity(new Intent(Kviz.this, kraj.class).putExtra("poeni",poeni));
+                    startActivity(new Intent(Kviz.this, MainActivity.class).putExtra("poeni",poeni));
                 }else{
                     q.setText(mixanaPitanja.get(indexpitanje).getPitanje());
                     a1.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(0));
                     a2.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(1));
                     a3.setText(mixanaPitanja.get(indexpitanje).getOdgovori().get(2));
                 }
-                Log.e("poeni", poeni+"");
-
             }
         });
-
-
-
-
-
-//        a3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(Kviz.this, kraj.class));
-//            }
-//        });
-
-//        a2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                myRef.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//
-//                pitanja = new ArrayList<Pitanje>();
-//                for (DataSnapshot chidSnap : dataSnapshot.getChildren()) {
-////                    Log.e("tmz",""+ chidSnap.getKey()); //displays the key for the node
-////                    Log.e("tmz",""+ chidSnap.child("pitanje").getValue());   //gives the value for given keyname
-////                    pitanja.add(new Pitanje(chidSnap.child("pitanje").getValue().toString()));
-//
-//                    List<String> localPitanja = new ArrayList<>();
-//
-//                    for(DataSnapshot odgovor : chidSnap.child("odgovori").getChildren()){
-//                        Log.e("iz nove liste",odgovor.getValue().toString());
-//                        localPitanja.add(odgovor.getValue().toString());
-//                    }
-//                        Log.e("----","-----");
-////
-//                    pitanja.add(new Pitanje(
-//                              chidSnap.child("broj").getValue().toString(),
-//                              chidSnap.child("odgovor").getValue().toString(),
-//                              chidSnap.child("pitanje").getValue().toString(),
-//                              localPitanja
-//                      ));
-//                    localPitanja.clear();
-//
-//                }
-//
-//                for(Pitanje pitanje : pitanja){
-//                    q.append(pitanje.getOdgovor());
-//                }
-////                Log.e("ntwz",dataSnapshot.getChildren().toString());
-//                    }
-//                    @Override
-//                    public void onCancelled(DatabaseError error) {
-//                        Log.e("error",error.toString());
-//                    }
-//                });
-//            }
-//        });
-
     }
-
-    private void proveriOdgovor(){
-
-    }
-
 }
