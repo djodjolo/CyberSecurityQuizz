@@ -241,28 +241,28 @@
     "pitanje" : "Koji programski jezik služi za analizu malware-a?"
   },{
     "broj" : 41,
-    "tezina" : 1,
-    "odgovor" : 3,
-    "odgovori" : [ "CFB", "OFB", "ECB" ],
-    "pitanje" : "Koji je DES nacin  najslabiji?"
+    "tezina" : 3,
+    "odgovor" : 1,
+    "odgovori" : [ "Application whitelisting", "Perimeter firewall", "Host intrusion detection system (HIDS)" ],
+    "pitanje" : "Koja endpoint bezbednosna tehnika ce najverovatnije spreciti prethodni nepoznati napad od uspesnosti?"
   },{
     "broj" : 42,
     "tezina" : 1,
     "odgovor" : 3,
-    "odgovori" : [ "CFB", "OFB", "ECB" ],
-    "pitanje" : "Koji je DES nacin  najslabiji?"
+    "odgovori" : [ "Reformatirati disk", "Obrisati osetljive podatke", "Razmagnetisati I unistiti (Degauss and destroy)" ],
+    "pitanje" : "Potrebno je odbaciti magnetni hard disk koji sadrzi licne podatke PII. Koji je metod za uklanjanjae PII sa magnetnog hard diska smatra najboljim?"
   },{
     "broj" : 43,
-    "tezina" : 3,
-    "odgovor" : 3,
-    "odgovori" : [ "CFB", "OFB", "ECB" ],
-    "pitanje" : "Koji je DES nacin  najslabiji?"
+    "tezina" : 1,
+    "odgovor" : 1,
+    "odgovori" : [ "Prodor", "Izmena", "Presecanje" ],
+    "pitanje" : "Sta od navedenog ne spada u osnovne kategorije napada?"
   },{
     "broj" : 44,
     "tezina" : 3,
-    "odgovor" : 3,
-    "odgovori" : [ "CFB", "OFB", "ECB" ],
-    "pitanje" : "Koji je DES nacin  najslabiji?"
+    "odgovor" : 2,
+    "odgovori" : [ "Bluesnarfing", "Bluejacking", "Bluemooning" ],
+    "pitanje" : "Sta od navedenog nije napad na bluetooth?"
   }, {
     "broj" : 45,
     "tezina" : 3,
@@ -272,3 +272,4 @@
   }
   ]
 }
+ 

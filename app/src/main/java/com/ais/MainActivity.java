@@ -25,8 +25,9 @@ import android.util.Log;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Button uvod;
+    Button uvod,nivo1,nivo2,nivo3;
     List<Pitanje> pitanja;
+    List<Pitanje> filtriranaPitanja;
     TextView rezultat;
     //initialize Firebase reference
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -46,11 +47,18 @@ public class MainActivity extends AppCompatActivity {
         }
         //init dugmad
         uvod = (Button) findViewById(R.id.uvod);
+        nivo1 = (Button) findViewById(R.id.nivo1);
+        nivo2 = (Button) findViewById(R.id.nivo2);
+        nivo3 = (Button) findViewById(R.id.nivo3);
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .permitAll().build();
         StrictMode.setThreadPolicy(policy);
         //init podaci
         pitanja = new ArrayList<Pitanje>();
+        filtriranaPitanja = new ArrayList<Pitanje>();
+
+
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -75,15 +83,59 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("error", error.toString());
             }
         });
+
         uvod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Gson gson = new Gson();
                 String pitanja_json = gson.toJson(pitanja);
-                startActivity(new Intent(MainActivity.this, Kviz.class));
                 startActivity(new Intent(MainActivity.this, Kviz.class).putExtra("pitanja_json",pitanja_json));
             }
         });
+
+        nivo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Gson gson = new Gson();
+                for(int i=0;i<pitanja.size();i++){
+                    if(pitanja.get(i).getTezina().equals("1")){
+                        filtriranaPitanja.add(pitanja.get(i));
+                    }
+                }
+                String pitanja_json = gson.toJson(filtriranaPitanja);
+                startActivity(new Intent(MainActivity.this, Kviz.class).putExtra("pitanja_json",pitanja_json));
+            }
+        });
+
+        nivo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Gson gson = new Gson();
+                for(int i=0;i<pitanja.size();i++){
+                    if(pitanja.get(i).getTezina().equals("2")){
+                        filtriranaPitanja.add(pitanja.get(i));
+                    }
+                }
+                String pitanja_json = gson.toJson(filtriranaPitanja);
+                startActivity(new Intent(MainActivity.this, Kviz.class).putExtra("pitanja_json",pitanja_json));
+            }
+        });
+
+        nivo3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Gson gson = new Gson();
+                for(int i=0;i<pitanja.size();i++){
+                    if(pitanja.get(i).getTezina().equals("3")){
+                        filtriranaPitanja.add(pitanja.get(i));
+                    }
+                }
+                String pitanja_json = gson.toJson(filtriranaPitanja);
+                startActivity(new Intent(MainActivity.this, Kviz.class).putExtra("pitanja_json",pitanja_json));
+            }
+        });
+
+
 
     }
 }

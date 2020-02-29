@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/uvodniTekst" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/nivo1"
         android:layout_width="361dp"
         android:layout_height="70dp"
         android:layout_marginTop="156dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/uvodniTekst" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/nivo2"
         android:layout_width="372dp"
         android:layout_height="56dp"
         android:text="Napredno znanje o sajber bezbednosti"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintTop_toBottomOf="@+id/nivo3"
         app:layout_constraintVertical_bias="0.517" />
 
     <Button
@@ -73,7 +73,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/nivo3"
         android:layout_width="366dp"
         android:layout_height="61dp"
         android:layout_marginTop="32dp"
@@ -81,6 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/nivo1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
